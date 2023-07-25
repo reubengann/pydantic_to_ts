@@ -2,7 +2,7 @@ import io
 
 import pytest
 
-from src.pytsparser import PydanticToTSConvertor
+from src.pydantic_to_ts.pytsparser import PydanticToTSConvertor
 
 preamble = "from pydantic import BaseModel\n\n\n"
 

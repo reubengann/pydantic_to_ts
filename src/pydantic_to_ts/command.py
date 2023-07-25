@@ -1,8 +1,7 @@
 import argparse
-import sys
 from pathlib import Path
 
-from src.pytsparser import PydanticToTSConvertor
+from pydantic_to_ts.pytsparser import PydanticToTSConvertor
 
 
 def main() -> int:
@@ -33,7 +32,3 @@ def main() -> int:
         parser = PydanticToTSConvertor(fin, fout)
         parser.parse()
     return 0
-
-
-if __name__ == "__main__":
-    sys.exit(main())

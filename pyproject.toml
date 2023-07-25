@@ -9,13 +9,16 @@ authors = [
   { name="Reuben Gann", email="reubengann@gmail.com" },
 ]
 description = "A utility for converting Pydantic models to Typescript type definitions"
-readme = "README.md"
+readme = "readme.md"
 requires-python = ">=3.10"
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
+
+[project.scripts]
+pydantic_to_ts = "pydantic_to_ts.command:main"
 
 [project.urls]
 "Homepage" = "https://github.com/pypa/sampleproject"
