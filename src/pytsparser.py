@@ -6,13 +6,14 @@ TYPEMAP = {
     "str": "string",
     "int": "number",
     "datetime": "string",
+    "date": "string",
     "bool": "boolean",
     "float": "number",
     "dict": "any",
 }
 
 
-class PyTSParser:
+class PydanticToTSConvertor:
     def __init__(self, fin: TextIOWrapper, fout: TextIOWrapper) -> None:
         self.fin = fin
         self.fout = fout

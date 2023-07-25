@@ -2,7 +2,7 @@ import argparse
 import sys
 from pathlib import Path
 
-from src.pytsparser import PyTSParser
+from src.pytsparser import PydanticToTSConvertor
 
 
 def main() -> int:
@@ -30,7 +30,7 @@ def main() -> int:
         )
         return 1
     with open(infile, "r") as fin, open(outfile, "w") as fout:
-        parser = PyTSParser(fin, fout)
+        parser = PydanticToTSConvertor(fin, fout)
         parser.parse()
     return 0
 

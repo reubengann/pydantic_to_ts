@@ -2,7 +2,7 @@ import io
 
 import pytest
 
-from src.pytsparser import PyTSParser
+from src.pytsparser import PydanticToTSConvertor
 
 preamble = "from pydantic import BaseModel\n\n\n"
 
@@ -15,7 +15,7 @@ class Foo:
 """
     )
     fout = io.StringIO()
-    p = PyTSParser(fin, fout)
+    p = PydanticToTSConvertor(fin, fout)
     p.parse()
     fout.seek(0)
     assert fout.read() == ""
@@ -30,7 +30,7 @@ class Example(BaseModel):
 """
     )
     fout = io.StringIO()
-    p = PyTSParser(fin, fout)
+    p = PydanticToTSConvertor(fin, fout)
     p.parse()
     fout.seek(0)
     result = fout.read().strip()
@@ -47,7 +47,7 @@ class Example(BaseModel):
 """
     )
     fout = io.StringIO()
-    p = PyTSParser(fin, fout)
+    p = PydanticToTSConvertor(fin, fout)
     p.parse()
     fout.seek(0)
     result = fout.read().strip()
@@ -86,7 +86,7 @@ class Example(BaseModel):
 """
     )
     fout = io.StringIO()
-    p = PyTSParser(fin, fout)
+    p = PydanticToTSConvertor(fin, fout)
     p.parse()
     fout.seek(0)
     result = fout.read().strip()
@@ -105,7 +105,7 @@ class ModelB(BaseModel):
 """
     )
     fout = io.StringIO()
-    p = PyTSParser(fin, fout)
+    p = PydanticToTSConvertor(fin, fout)
     p.parse()
     fout.seek(0)
     result = fout.read().strip()
@@ -135,7 +135,7 @@ class Example(BaseModel):
 """
     )
     fout = io.StringIO()
-    p = PyTSParser(fin, fout)
+    p = PydanticToTSConvertor(fin, fout)
     p.parse()
     fout.seek(0)
     result = fout.read().strip()
@@ -154,7 +154,7 @@ class Example(BaseModel):
 """
     )
     fout = io.StringIO()
-    p = PyTSParser(fin, fout)
+    p = PydanticToTSConvertor(fin, fout)
     p.parse()
     out, err = capfd.readouterr()
     assert out == "Warning: Unknown inner class declaration Something on line 6\n"
@@ -175,7 +175,7 @@ class Example(BaseModel):
 """
     )
     fout = io.StringIO()
-    p = PyTSParser(fin, fout)
+    p = PydanticToTSConvertor(fin, fout)
     p.parse()
     out, err = capfd.readouterr()
     assert out.startswith("Warning: Unhandled declaration <ast.FunctionDef")
@@ -195,7 +195,7 @@ class Example(BaseModel):
 """
     )
     fout = io.StringIO()
-    p = PyTSParser(fin, fout)
+    p = PydanticToTSConvertor(fin, fout)
     p.parse()
     out, err = capfd.readouterr()
     assert out == "Warning: Unhandled type Callable on line 8\n"
