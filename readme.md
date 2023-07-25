@@ -36,7 +36,7 @@ export type Example = {
 Install into your environment:
 
 ```bash
-git clone url pydantic_to_ts
+git clone https://github.com/reubengann/pydantic_to_ts.git pydantic_to_ts
 pip install ./pydantic_to_ts
 ```
 
