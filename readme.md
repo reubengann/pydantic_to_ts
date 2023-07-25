@@ -33,12 +33,17 @@ export type Example = {
 
 ## Setup
 
-Install into your environment
+Install into your environment:
+
+```bash
+git clone url pydantic_to_ts
+pip install ./pydantic_to_ts
+```
 
 ## Command line arguments
 
 ```
-usage: pydantic_to_ts.py [-h] infile outfile
+usage: pydantic_to_ts [-h] infile outfile
 
 positional arguments:
   infile      Input file path. Must be a python script with pydantic models
